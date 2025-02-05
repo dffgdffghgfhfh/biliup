@@ -23,9 +23,9 @@ RUN set -eux \
     && apt-get install -y --no-install-recommends \
         wget \
         xz-utils \
-        procps  # 安装 top 和 free 命令
+        procps  # 安装 top 和 free 命令 \
     && apt-mark auto '.*' > /dev/null \
-    && arch="$(dpkg --print-architecture)"; arch="${arch##*-}" \
+    && arch="$(dpkg --print-architecture)" && arch="${arch##*-}" \
     && url='https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2023-10-31-14-21/' \
     && case "$arch" in \
         'amd64') \
