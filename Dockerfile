@@ -24,6 +24,7 @@ RUN set -eux; \
 	apt-get install -y --no-install-recommends \
 		wget \
 		xz-utils \
+		procps  # 添加 procps 以安装 top 和 free 命令
 	; \
 	apt-mark auto '.*' > /dev/null; \
 	\
@@ -75,7 +76,6 @@ RUN set -eux; \
 	apt-get install -y --no-install-recommends git g++; \
 	git clone --depth 1 --branch "$branch_name" "$repo_url"; \
 	cd biliup && \
- 	apt install procps && \
 	pip3 install --no-cache-dir quickjs && \
 	pip3 install -e . && \
 	\
