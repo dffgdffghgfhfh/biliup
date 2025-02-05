@@ -73,7 +73,7 @@ RUN set -eux; \
 RUN set -eux; \
 	savedAptMark="$(apt-mark showmanual)"; \
 	apt-get update; \
-	apt-get install -y --no-install-recommends git g++; \
+	apt-get install -y --no-install-recommends git g++ procps; \
 	git clone --depth 1 --branch "$branch_name" "$repo_url"; \
 	cd biliup && \
 	pip3 install --no-cache-dir quickjs && \
