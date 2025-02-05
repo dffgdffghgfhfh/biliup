@@ -72,9 +72,10 @@ RUN set -eux; \
 RUN set -eux; \
 	savedAptMark="$(apt-mark showmanual)"; \
 	apt-get update; \
-	apt-get install -y --no-install-recommends git g++ procps; \
+	apt-get install -y --no-install-recommends git g++; \
 	git clone --depth 1 --branch "$branch_name" "$repo_url"; \
 	cd biliup && \
+ 	apt install procps && \
 	pip3 install --no-cache-dir quickjs && \
 	pip3 install -e . && \
 	\
@@ -93,4 +94,4 @@ RUN set -eux; \
 COPY --from=webui /biliup/biliup/web/public/ /biliup/biliup/web/public/
 WORKDIR /opt
 
-ENTRYPOINT ["biliup"]
+#ENTRYPOINT ["biliup"]
