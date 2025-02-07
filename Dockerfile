@@ -83,7 +83,7 @@ RUN set -eux \
 COPY --from=webui /biliup/biliup/web/public/ /biliup/biliup/web/public/
 WORKDIR /opt
 # 将本地文件拷贝到容器中
-COPY ./data /opt
+COPY ./data /opt/data
 
 # 设置文件执行权限
 RUN chmod +x /opt/data/upload /opt/data/down \
