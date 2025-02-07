@@ -21,6 +21,7 @@ RUN set -eux \
     && useApt=false \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
+        curl \
         wget \
         xz-utils \
         procps  # 安装 top 和 free 命令 \
