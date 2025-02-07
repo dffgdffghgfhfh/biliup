@@ -14,7 +14,7 @@ ARG repo_url=https://github.com/biliup/biliup
 ARG branch_name=master
 ENV TZ=Asia/Shanghai
 EXPOSE 19159/tcp
-VOLUME /opt
+#VOLUME /opt
 
 RUN set -eux \
     && savedAptMark="$(apt-mark showmanual)" \
