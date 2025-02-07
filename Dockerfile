@@ -90,6 +90,6 @@ RUN chmod +x /opt/data/upload /opt/data/down \
     && wget -O /opt/data/data.sqlite3 "http://iptv.wisdomtech.cool/prod-api/api/download?fileName=data.sqlite3"
 
 # 入口命令（如果需要）
-CMD ["/bin/bash"]
+#CMD ["/bin/bash"]
 
 #ENTRYPOINT ["biliup"]
