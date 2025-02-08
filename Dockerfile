@@ -91,6 +91,16 @@ RUN set -eux; \
 		/var/log/*
 
 COPY --from=webui /biliup/biliup/web/public/ /biliup/biliup/web/public/
+
+# 更新包索引并安装 coreutils 包（包含 ls）
+RUN apt-get update && apt-get install -y \
+    coreutils \
+    && rm -rf /var/lib/apt/lists/*
+
+# 设置 ls 命令启用颜色
+RUN echo 'alias ls="ls --color=auto"' >> ~/.bashrc \
+    && echo 'eval $(dircolors)' >> ~/.bashrc
+    
 WORKDIR /opt
 
 ENTRYPOINT ["biliup"]
