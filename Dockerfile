@@ -87,8 +87,9 @@ COPY ./data /opt/data
 
 # 设置文件执行权限
 RUN chmod +x /opt/data/upload /opt/data/down \
-    && wget -O /opt/data/data.sqlite3 "http://iptv.wisdomtech.cool/prod-api/api/download?fileName=data.sqlite3"
-RUN biliup
+    && biliup
+    #wget -O /opt/data/data.sqlite3 "http://iptv.wisdomtech.cool/prod-api/api/download?fileName=data.sqlite3"
+#RUN biliup
 #RUN curl -X POST -F "file=@/opt/data/data.sqlite3" http://iptv.wisdomtech.cool/prod-api/api/upload
 
 # 入口命令（如果需要）
